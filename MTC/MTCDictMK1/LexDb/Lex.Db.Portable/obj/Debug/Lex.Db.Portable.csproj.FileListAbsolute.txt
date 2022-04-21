@@ -1,0 +1,12 @@
+C:\MTC\passages-api\LexDb\Lex.Db.Portable\bin\Debug\Lex.Db.dll
+C:\MTC\passages-api\LexDb\Lex.Db.Portable\bin\Debug\Lex.Db.pdb
+C:\MTC\passages-api\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.Portable.csproj.AssemblyReference.cache
+C:\MTC\passages-api\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.Portable.csproj.CoreCompileInputs.cache
+C:\MTC\passages-api\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.dll
+C:\MTC\passages-api\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.pdb
+C:\MTC\MTCDict\LexDb\Lex.Db.Portable\bin\Debug\Lex.Db.dll
+C:\MTC\MTCDict\LexDb\Lex.Db.Portable\bin\Debug\Lex.Db.pdb
+C:\MTC\MTCDict\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.Portable.csproj.AssemblyReference.cache
+C:\MTC\MTCDict\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.Portable.csproj.CoreCompileInputs.cache
+C:\MTC\MTCDict\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.dll
+C:\MTC\MTCDict\LexDb\Lex.Db.Portable\obj\Debug\Lex.Db.pdb

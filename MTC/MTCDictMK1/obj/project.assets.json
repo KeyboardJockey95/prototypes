@@ -1,0 +1,115 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "JTLanguageModelsPortable/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Lex.Db.Portable": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JTLanguageModelsPortable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JTLanguageModelsPortable.dll": {}
+        }
+      },
+      "Lex.Db.Portable/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Lex.Db.Portable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lex.Db.Portable.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JTLanguageModelsPortable/1.0.0": {
+      "type": "project",
+      "path": "JTLanguageModelsPortable/JTLanguageModelsPortable.csproj",
+      "msbuildProject": "JTLanguageModelsPortable/JTLanguageModelsPortable.csproj"
+    },
+    "Lex.Db.Portable/1.0.0": {
+      "type": "project",
+      "path": "LexDb/Lex.Db.Portable/Lex.Db.Portable.csproj",
+      "msbuildProject": "LexDb/Lex.Db.Portable/Lex.Db.Portable.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "JTLanguageModelsPortable >= 1.0.0",
+      "Lex.Db.Portable >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\maeld\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\MTC\\MTCDict\\MTCDict.csproj",
+      "projectName": "MTCDict",
+      "projectPath": "C:\\MTC\\MTCDict\\MTCDict.csproj",
+      "packagesPath": "C:\\Users\\maeld\\.nuget\\packages\\",
+      "outputPath": "C:\\MTC\\MTCDict\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\maeld\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\MTC\\MTCDict\\JTLanguageModelsPortable\\JTLanguageModelsPortable.csproj": {
+              "projectPath": "C:\\MTC\\MTCDict\\JTLanguageModelsPortable\\JTLanguageModelsPortable.csproj"
+            },
+            "C:\\MTC\\MTCDict\\LexDb\\Lex.Db.Portable\\Lex.Db.Portable.csproj": {
+              "projectPath": "C:\\MTC\\MTCDict\\LexDb\\Lex.Db.Portable\\Lex.Db.Portable.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

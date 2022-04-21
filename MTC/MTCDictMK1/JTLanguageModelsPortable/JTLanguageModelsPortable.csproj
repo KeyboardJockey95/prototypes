@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{496A5B66-4AC0-4A61-AC4A-22A2C002A350}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JTLanguageModelsPortable</RootNamespace>
+    <AssemblyName>JTLanguageModelsPortable</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile344</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\LexDb\Lex.Db.Portable\Lex.Db.Portable.csproj">
+      <Project>{f362f6b0-90b4-449b-96f8-8c5d7e950c2c}</Project>
+      <Name>Lex.Db.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AnonymousUserRecord.cs" />
+    <Compile Include="Admin\ChangeLogItem.cs" />
+    <Compile Include="Admin\EditAction.cs" />
+    <Compile Include="Admin\Quota.cs" />
+    <Compile Include="Admin\UserID.cs" />
+    <Compile Include="Admin\UserProfile.cs" />
+    <Compile Include="Admin\UserRecord.cs" />
+    <Compile Include="Application\ApplicationCookies.cs" />
+    <Compile Include="Application\ApplicationData.cs" />
+    <Compile Include="Application\ApplicationMenu.cs" />
+    <Compile Include="Application\ArgumentUtilities.cs" />
+    <Compile Include="Application\ControllerUtilities.cs" />
+    <Compile Include="Application\FormReader.cs" />
+    <Compile Include="Application\FormUtilities.cs" />
+    <Compile Include="Application\IApplicationCookies.cs" />
+    <Compile Include="Application\ICookieContainer.cs" />
+    <Compile Include="Application\InputValidator.cs" />
+    <Compile Include="Application\MenuItem.cs" />
+    <Compile Include="Application\MessageBox.cs" />
+    <Compile Include="Application\TaskUtilities.cs" />
+    <Compile Include="Application\UrlUtilities.cs" />
+    <Compile Include="Content\Annotation.cs" />
+    <Compile Include="Content\BaseContentStorage.cs" />
+    <Compile Include="Content\BaseMarkupContainer.cs" />
+    <Compile Include="Content\BaseContentContainer.cs" />
+    <Compile Include="Content\BaseObjectContent.cs" />
+    <Compile Include="Content\ContentDocumentItem.cs" />
+    <Compile Include="Content\ContentItemReference.cs" />
+    <Compile Include="Content\ContentMediaItem.cs" />
+    <Compile Include="Content\ContentStatistics.cs" />
+    <Compile Include="Content\ContentStatisticsCache.cs" />
+    <Compile Include="Content\ContentStudyList.cs" />
+    <Compile Include="Content\ContentUtilities.cs" />
+    <Compile Include="Content\LanguageItem.cs" />
+    <Compile Include="Content\LanguageMediaItem.cs" />
+    <Compile Include="Content\MediaRun.cs" />
+    <Compile Include="Content\MultiLanguageItem.cs" />
+    <Compile Include="Content\MultiLanguageItemReference.cs" />
+    <Compile Include="Content\OptionContainer.cs" />
+    <Compile Include="Content\OptionDescriptorContainer.cs" />
+    <Compile Include="Content\SentenceParsingInfo.cs" />
+    <Compile Include="Content\StudySentenceList.cs" />
+    <Compile Include="Content\WordMapping.cs" />
+    <Compile Include="Converters\ConvertTimeZone.cs" />
+    <Compile Include="Dictionary\DictionarySources.cs" />
+    <Compile Include="Dictionary\FrequencyTable.cs" />
+    <Compile Include="Dictionary\ProbableDefinition.cs" />
+    <Compile Include="Dictionary\ProbableDefinitionComparer.cs" />
+    <Compile Include="Dictionary\ProbableMeaning.cs" />
+    <Compile Include="Dictionary\ProbableMeaningComparer.cs" />
+    <Compile Include="Dictionary\ProbablePairing.cs" />
+    <Compile Include="Dictionary\ProbablePairingComparer.cs" />
+    <Compile Include="Formats\FormatChunkyFiles.cs" />
+    <Compile Include="Formats\FormatDictionaryRecord.cs" />
+    <Compile Include="Formats\FormatEmbark.cs" />
+    <Compile Include="Formats\FormatEmbarkData.cs" />
+    <Compile Include="Formats\FormatGizaAlignment.cs" />
+    <Compile Include="Formats\FormatGizaDict.cs" />
+    <Compile Include="Formats\FormatGizaInput.cs" />
+    <Compile Include="Formats\FormatJAL.cs" />
+    <Compile Include="Formats\FormatJIAlignDict.cs" />
+    <Compile Include="Formats\FormatDictionaryMedia.cs" />
+    <Compile Include="Formats\FormatLanguageReactor.cs" />
+    <Compile Include="Formats\FormatLingoesDict.cs" />
+    <Compile Include="Formats\FormatMediaZip.cs" />
+    <Compile Include="Formats\FormatPassage.cs" />
+    <Compile Include="Formats\FormatPassageLayout.cs" />
+    <Compile Include="Formats\FormatPassageReference.cs" />
+    <Compile Include="Formats\FormatSubs2Srs.cs" />
+    <Compile Include="Formats\FormatSubtitleItem.cs" />
+    <Compile Include="Formats\FormatSubtitles.cs" />
+    <Compile Include="Formats\FormatTHTDict.cs" />
+    <Compile Include="Formats\FormatTransfer.cs" />
+    <Compile Include="Formats\FormatWBXDict.cs" />
+    <Compile Include="Formats\FormatWikiDict.cs" />
+    <Compile Include="Language\AudioMapping\AudioMapper.cs" />
+    <Compile Include="Language\AudioMapping\AudioMapperStatistics.cs" />
+    <Compile Include="Language\AudioMapping\MappingSentenceRun.cs" />
+    <Compile Include="Language\AudioMapping\MappingWordRun.cs" />
+    <Compile Include="Language\AudioMapping\SentenceMapping.cs" />
+    <Compile Include="Language\AudioMapping\TextBlock.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolDefinitions.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolGraph.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolLayout.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolMapping.cs" />
+    <Compile Include="Language\Inflect\Deinflection.cs" />
+    <Compile Include="Language\Inflect\DeinflectionInstance.cs" />
+    <Compile Include="Language\Inflect\InflectorDescription.cs" />
+    <Compile Include="Language\Inflect\InflectorFamily.cs" />
+    <Compile Include="Language\Inflect\InflectorTrigger.cs" />
+    <Compile Include="Language\Inflect\Operation.cs" />
+    <Compile Include="Language\Inflect\PhrasePattern.cs" />
+    <Compile Include="Language\Inflect\TokenDescriptor.cs" />
+    <Compile Include="Language\Inflect\WordDescriptor.cs" />
+    <Compile Include="Language\Inflect\WordToken.cs" />
+    <Compile Include="Language\Languages\English\EnglishTool.cs" />
+    <Compile Include="Language\Languages\French\FrenchTool.cs" />
+    <Compile Include="Language\Languages\German\GermanTool.cs" />
+    <Compile Include="Language\Inflect\Classifier.cs" />
+    <Compile Include="Language\Inflect\CompoundInflector.cs" />
+    <Compile Include="Language\Inflect\Condition.cs" />
+    <Compile Include="Language\Inflect\DesignatorTable.cs" />
+    <Compile Include="Language\Inflect\InflectorFilterItem.cs" />
+    <Compile Include="Language\Inflect\InflectorFilter.cs" />
+    <Compile Include="Language\Inflect\InflectorGroup.cs" />
+    <Compile Include="Language\Languages\Italian\ItalianTool.cs" />
+    <Compile Include="Language\Languages\Japanese\JapaneseTool.cs" />
+    <Compile Include="Language\Languages\Japanese\JapaneseToolDeclination.cs" />
+    <Compile Include="Language\Languages\Japanese\JapaneseToolLayout.cs" />
+    <Compile Include="Language\Languages\Japanese\JapaneseToolLookup.cs" />
+    <Compile Include="Language\Languages\Japanese\JapaneseToolTransliterate.cs" />
+    <Compile Include="Language\Layout\InflectionsLayout.cs" />
+    <Compile Include="Language\Layout\InflectionsLayoutCell.cs" />
+    <Compile Include="Language\Layout\InflectionsLayoutCellFormat.cs" />
+    <Compile Include="Language\Layout\InflectionsLayoutColumn.cs" />
+    <Compile Include="Language\Layout\InflectionsLayoutGroup.cs" />
+    <Compile Include="Language\Layout\InflectionsLayoutHeading.cs" />
+    <Compile Include="Language\Layout\InflectionsLayoutRow.cs" />
+    <Compile Include="Language\Inflect\Inflector.cs" />
+    <Compile Include="Language\Inflect\InflectorTable.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolDeclination.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolLookup.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolMatch.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolParse.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolTransliterate.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolWordRuns.cs" />
+    <Compile Include="Language\Inflect\IrregularTable.cs" />
+    <Compile Include="Language\Languages\Portuguese\PortugueseTool.cs" />
+    <Compile Include="Language\Support\LiteralString.cs" />
+    <Compile Include="Language\Inflect\Modifier.cs" />
+    <Compile Include="Language\MultiLanguage\MultiLanguageTool.cs" />
+    <Compile Include="Language\MultiLanguage\MultiLanguageToolDeclination.cs" />
+    <Compile Include="Language\Inflect\ModifierFixup.cs" />
+    <Compile Include="Language\Inflect\SemiRegular.cs" />
+    <Compile Include="Language\Support\SentenceFix.cs" />
+    <Compile Include="Language\Support\SentenceFixes.cs" />
+    <Compile Include="Content\StudyItemCache.cs" />
+    <Compile Include="Content\TextRun.cs" />
+    <Compile Include="Content\UserRunItem.cs" />
+    <Compile Include="Converters\ConvertBase.cs" />
+    <Compile Include="Converters\ConvertCanonical.cs" />
+    <Compile Include="Converters\ConvertDisplay.cs" />
+    <Compile Include="Converters\ConvertArabicRomanization.cs" />
+    <Compile Include="Converters\ConvertGreekRomanization.cs" />
+    <Compile Include="Converters\ConvertHangul.cs" />
+    <Compile Include="Converters\ConvertKana.cs" />
+    <Compile Include="Converters\ConvertPinyin.cs" />
+    <Compile Include="Converters\ConvertPinyinNumeric.cs" />
+    <Compile Include="Converters\ConvertRomaji.cs" />
+    <Compile Include="Converters\ConvertRomanization.cs" />
+    <Compile Include="Converters\ConvertTransliterate.cs" />
+    <Compile Include="Crawlers\Crawler.cs" />
+    <Compile Include="Crawlers\CrawlerFactory.cs" />
+    <Compile Include="Crawlers\SiteNode.cs" />
+    <Compile Include="Crawlers\SitePageData.cs" />
+    <Compile Include="Crawlers\SiteTextTools.cs" />
+    <Compile Include="Crawlers\SiteTree.cs" />
+    <Compile Include="Database\DatabaseItem.cs" />
+    <Compile Include="Database\DatabaseLanguageObjectStore.cs" />
+    <Compile Include="Database\DatabaseLanguagePairObjectStore.cs" />
+    <Compile Include="Database\DatabaseMainRepository.cs" />
+    <Compile Include="Database\DatabaseMatcher.cs" />
+    <Compile Include="Database\DatabaseObjectFactory.cs" />
+    <Compile Include="Database\DatabaseObjectStore.cs" />
+    <Compile Include="Database\DatabaseTable.cs" />
+    <Compile Include="Database\DatabaseTableFactory.cs" />
+    <Compile Include="Database\DatabaseTableTyped.cs" />
+    <Compile Include="Database\DatabaseTableTypedCompoundIndexed.cs" />
+    <Compile Include="Database\DatabaseTableTypedSimpleIndexed.cs" />
+    <Compile Include="Dictionary\DictionaryCache.cs" />
+    <Compile Include="Dictionary\DictionaryEntry.cs" />
+    <Compile Include="Dictionary\LanguageSynonyms.cs" />
+    <Compile Include="Dictionary\Sense.cs" />
+    <Compile Include="Formats\Format.cs" />
+    <Compile Include="Formats\FormatArgument.cs" />
+    <Compile Include="Formats\FormatCEDict.cs" />
+    <Compile Include="Formats\FormatChunky.cs" />
+    <Compile Include="Formats\FormatCrawler.cs" />
+    <Compile Include="Formats\FormatDictionary.cs" />
+    <Compile Include="Formats\FormatEDict.cs" />
+    <Compile Include="Formats\FormatExtract.cs" />
+    <Compile Include="Formats\FormatFactory.cs" />
+    <Compile Include="Formats\FormatPackage.cs" />
+    <Compile Include="Formats\FormatPatterned.cs" />
+    <Compile Include="Formats\FormatPatternedBlock.cs" />
+    <Compile Include="Formats\FormatPatternedLine.cs" />
+    <Compile Include="Formats\FormatQuickLookup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formats\FormatUnihan.cs" />
+    <Compile Include="Formats\FormatXml.cs" />
+    <Compile Include="Forum\ForumCategory.cs" />
+    <Compile Include="Forum\ForumHeading.cs" />
+    <Compile Include="Forum\ForumPosting.cs" />
+    <Compile Include="Forum\ForumTopic.cs" />
+    <Compile Include="Helpers\Check.cs" />
+    <Compile Include="Helpers\HtmlFormatter.cs" />
+    <Compile Include="Helpers\SoftwareTimer.cs" />
+    <Compile Include="Helpers\TimeTrace.cs" />
+    <Compile Include="Helpers\TimeTracer.cs" />
+    <Compile Include="Language\Languages\Chinese\ChineseTool.cs" />
+    <Compile Include="Language\Inflect\Designator.cs" />
+    <Compile Include="Language\Languages\English\EnglishStems.cs" />
+    <Compile Include="Language\Languages\Generic\GenericLanguageTool.cs" />
+    <Compile Include="Language\Inflect\Inflection.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseStems.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolCode.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolAdjectiveDeclinations.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolAdjectiveDesignators.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolContractions.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolGraph.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolNounDesignators.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolNounDeclinations.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolTypes.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolVerbConjugations.cs" />
+    <Compile Include="Language\Languages\JapaneseCode\JapaneseToolVerbDesignators.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageTool.cs" />
+    <Compile Include="Language\BaseLanguageTool\LanguageToolFactory.cs" />
+    <Compile Include="Language\Lex\LexCategoryDesignation.cs" />
+    <Compile Include="Language\Lex\LexItem.cs" />
+    <Compile Include="Language\Lex\LexNode.cs" />
+    <Compile Include="Language\Lex\LexTable.cs" />
+    <Compile Include="Language\Languages\Spanish\SpanishTool.cs" />
+    <Compile Include="Language\Inflect\SpecialAction.cs" />
+    <Compile Include="Language\Lex\TextGraph.cs" />
+    <Compile Include="Language\Lex\TextGraphNode.cs" />
+    <Compile Include="Language\Lex\TextGraphNodeComparer.cs" />
+    <Compile Include="Language\Support\SentenceRun.cs" />
+    <Compile Include="Language\Support\WordFixes.cs" />
+    <Compile Include="Language\Support\WordRun.cs" />
+    <Compile Include="Markup\AudioMarkupRenderer.cs" />
+    <Compile Include="Markup\AutomatedCompiledMarkup.cs" />
+    <Compile Include="Markup\AutomatedExecutionGroup.cs" />
+    <Compile Include="Markup\AutomatedExecutionItem.cs" />
+    <Compile Include="Markup\AutomatedInstruction.cs" />
+    <Compile Include="Markup\AutomatedMarkupRenderer.cs" />
+    <Compile Include="Markup\ContentRenderParameters.cs" />
+    <Compile Include="Markup\MarkupRenderer.cs" />
+    <Compile Include="Markup\MarkupRendererContent.cs" />
+    <Compile Include="Markup\MarkupTemplate.cs" />
+    <Compile Include="Markup\MarkupTemplateReference.cs" />
+    <Compile Include="Master\MasterContentItem.cs" />
+    <Compile Include="Master\MasterMenuItem.cs" />
+    <Compile Include="Master\NodeMaster.cs" />
+    <Compile Include="Master\NodeMasterReference.cs" />
+    <Compile Include="Matchers\BaseKeyMatcher.cs" />
+    <Compile Include="Matchers\CompoundMatcher.cs" />
+    <Compile Include="Matchers\DateTimeMatcher.cs" />
+    <Compile Include="Matchers\FloatMatcher.cs" />
+    <Compile Include="Matchers\GuidMatcher.cs" />
+    <Compile Include="Matchers\IntMatcher.cs" />
+    <Compile Include="Matchers\LanguageIDMatcher.cs" />
+    <Compile Include="Matchers\LanguageStringMatcher.cs" />
+    <Compile Include="Matchers\Matcher.cs" />
+    <Compile Include="Matchers\StringMatcher.cs" />
+    <Compile Include="MediaInterfaces\IArchiveFile.cs" />
+    <Compile Include="MediaInterfaces\IDataBuffer.cs" />
+    <Compile Include="MediaInterfaces\IMediaConvert.cs" />
+    <Compile Include="MediaInterfaces\IPortableFile.cs" />
+    <Compile Include="MediaInterfaces\ISpeechToText.cs" />
+    <Compile Include="MediaInterfaces\ITextToSpeech.cs" />
+    <Compile Include="Media\Audio.cs" />
+    <Compile Include="Media\AudioInstance.cs" />
+    <Compile Include="Media\AudioMultiReference.cs" />
+    <Compile Include="Media\AudioReference.cs" />
+    <Compile Include="Media\ConvertAudio.cs" />
+    <Compile Include="Media\FileBuffer.cs" />
+    <Compile Include="Media\FileSingleton.cs" />
+    <Compile Include="Media\Image.cs" />
+    <Compile Include="Media\MediaConvertSingleton.cs" />
+    <Compile Include="Media\MediaDescription.cs" />
+    <Compile Include="Media\MediaUtilities.cs" />
+    <Compile Include="Media\MemoryBuffer.cs" />
+    <Compile Include="Media\PersistentVoiceList.cs" />
+    <Compile Include="Media\PictureReference.cs" />
+    <Compile Include="Media\SpeechToTextSingleton.cs" />
+    <Compile Include="Media\Voice.cs" />
+    <Compile Include="Media\VoiceList.cs" />
+    <Compile Include="Node\NodeUtilitiesDisplay.cs" />
+    <Compile Include="Node\NodeUtilitiesTransfer.cs" />
+    <Compile Include="Node\ObjectReferenceNodeTree.cs" />
+    <Compile Include="Node\ItemWalker.cs" />
+    <Compile Include="Node\NodeUtilitiesDictionary.cs" />
+    <Compile Include="Node\NodeUtilitiesLog.cs" />
+    <Compile Include="Node\NodeUtilitiesVocabulary.cs" />
+    <Compile Include="Node\NodeUtilitiesWalker.cs" />
+    <Compile Include="Node\PathDesignator.cs" />
+    <Compile Include="Object\BaseStrings.cs" />
+    <Compile Include="Object\BaseStringValueComparer.cs" />
+    <Compile Include="Object\LanguageChars.cs" />
+    <Compile Include="Object\LanguageCodes.cs" />
+    <Compile Include="Object\ObjectMapper.cs" />
+    <Compile Include="Object\PersistentObject.cs" />
+    <Compile Include="Object\PersistentObjectMapper.cs" />
+    <Compile Include="Object\PersistentStringMapper.cs" />
+    <Compile Include="Language\Support\PunctuationCounter.cs" />
+    <Compile Include="Object\StringMapper.cs" />
+    <Compile Include="Object\TextUtilitiesEntities.cs" />
+    <Compile Include="RepositoryInterfaces\ILanguagePairObjectStore.cs" />
+    <Compile Include="Repository\DeinflectionRepository.cs" />
+    <Compile Include="Repository\LanguagePairBaseRepository.cs" />
+    <Compile Include="Repository\LanguagePairObjectStore.cs" />
+    <Compile Include="Repository\LogRepositories.cs" />
+    <Compile Include="Repository\PersistentSettingsStorage.cs" />
+    <Compile Include="Media\PortableFile.cs" />
+    <Compile Include="Media\TextToSpeechSingleton.cs" />
+    <Compile Include="Media\WaveAudioBuffer.cs" />
+    <Compile Include="Node\BaseObjectNode.cs" />
+    <Compile Include="Node\BaseObjectNodeTree.cs" />
+    <Compile Include="Node\NodeUtilities.cs" />
+    <Compile Include="Node\NodeUtilitiesAddToPlan.cs" />
+    <Compile Include="Node\NodeUtilitiesCreate.cs" />
+    <Compile Include="Node\NodeUtilitiesDelete.cs" />
+    <Compile Include="Node\NodeUtilitiesSelect.cs" />
+    <Compile Include="Node\NodeUtilitiesSpeech.cs" />
+    <Compile Include="Node\NodeUtilitiesStorage.cs" />
+    <Compile Include="Node\ObjectReferenceNode.cs" />
+    <Compile Include="ObjectInterfaces\IBaseObject.cs" />
+    <Compile Include="ObjectInterfaces\IBaseObjectKeyed.cs" />
+    <Compile Include="ObjectInterfaces\IBaseObjectLanguage.cs" />
+    <Compile Include="ObjectInterfaces\ILanguageTranslator.cs" />
+    <Compile Include="Object\BaseObject.cs" />
+    <Compile Include="Object\BaseObjectKeyed.cs" />
+    <Compile Include="Object\BaseObjectLanguage.cs" />
+    <Compile Include="Object\BaseObjectLanguages.cs" />
+    <Compile Include="Object\BaseObjectTagged.cs" />
+    <Compile Include="Object\BaseObjectTitled.cs" />
+    <Compile Include="Object\BaseString.cs" />
+    <Compile Include="Object\LanguageDescription.cs" />
+    <Compile Include="Object\LanguageDescriptor.cs" />
+    <Compile Include="Object\LanguageID.cs" />
+    <Compile Include="Object\LanguageLookup.cs" />
+    <Compile Include="Object\LanguageString.cs" />
+    <Compile Include="Object\LanguageTranslator.cs" />
+    <Compile Include="Object\LanguageUtilities.cs" />
+    <Compile Include="Object\MessageBase.cs" />
+    <Compile Include="Object\MultiLanguageString.cs" />
+    <Compile Include="Object\ObjectComparer.cs" />
+    <Compile Include="Object\ObjectException.cs" />
+    <Compile Include="Object\ObjectFactory.cs" />
+    <Compile Include="Object\ObjectFamilyFactory.cs" />
+    <Compile Include="Object\ObjectReference.cs" />
+    <Compile Include="Object\ObjectReferenceGuid.cs" />
+    <Compile Include="Object\ObjectReferenceNamed.cs" />
+    <Compile Include="Object\ObjectReferenceTitled.cs" />
+    <Compile Include="Object\ObjectTypes.cs" />
+    <Compile Include="Object\ObjectUtilities.cs" />
+    <Compile Include="Object\OptionDescriptor.cs" />
+    <Compile Include="Object\TextUtilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryInterfaces\ILanguageObjectStore.cs" />
+    <Compile Include="RepositoryInterfaces\IMainRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IObjectStore.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\CachedObjectStore.cs" />
+    <Compile Include="Repository\CacheOptions.cs" />
+    <Compile Include="Repository\ContentRepositories.cs" />
+    <Compile Include="Repository\CoreRepositories.cs" />
+    <Compile Include="Repository\DictionaryRepository.cs" />
+    <Compile Include="Repository\FixupDictionary.cs" />
+    <Compile Include="Repository\ForumRepositories.cs" />
+    <Compile Include="Repository\LanguageBaseRepository.cs" />
+    <Compile Include="Repository\LanguageObjectStore.cs" />
+    <Compile Include="Repository\MainRepository.cs" />
+    <Compile Include="Repository\MasterRepositories.cs" />
+    <Compile Include="Repository\MediaRepositories.cs" />
+    <Compile Include="Repository\MultlLanguageStringRepository.cs" />
+    <Compile Include="Repository\ObjectStore.cs" />
+    <Compile Include="Repository\RepositoryUtilities.cs" />
+    <Compile Include="Repository\Sandbox.cs" />
+    <Compile Include="Repository\ToolRepositories.cs" />
+    <Compile Include="Repository\UserRecordRepository.cs" />
+    <Compile Include="Service\ClientLanguageObjectStore.cs" />
+    <Compile Include="Service\ClientLanguagePairObjectStore.cs" />
+    <Compile Include="Service\ClientMainRepository.cs" />
+    <Compile Include="Service\ClientObjectStore.cs" />
+    <Compile Include="Service\ClientServiceBase.cs" />
+    <Compile Include="Service\HostServiceBase.cs" />
+    <Compile Include="Tables\CompoundMatchItem.cs" />
+    <Compile Include="Tables\DataColumn.cs" />
+    <Compile Include="Tables\DataFormat.cs" />
+    <Compile Include="Tables\DataRow.cs" />
+    <Compile Include="Tables\DataRowComparer.cs" />
+    <Compile Include="Tables\DataTable.cs" />
+    <Compile Include="Tables\GeneralStatistic.cs" />
+    <Compile Include="Tables\GeneralStatistics.cs" />
+    <Compile Include="Tables\GlossaryData.cs" />
+    <Compile Include="Tables\ItemStatistics.cs" />
+    <Compile Include="Tables\MatchItem.cs" />
+    <Compile Include="Tool\ToolConfiguration.cs" />
+    <Compile Include="Tool\ToolIndexHistory.cs" />
+    <Compile Include="Tool\ToolItemSelector.cs" />
+    <Compile Include="Tool\ToolItemStatus.cs" />
+    <Compile Include="Tool\ToolProfile.cs" />
+    <Compile Include="Tool\ToolSession.cs" />
+    <Compile Include="Tool\ToolSide.cs" />
+    <Compile Include="Tool\ToolStudyItem.cs" />
+    <Compile Include="Tool\ToolStudyList.cs" />
+    <Compile Include="Tool\ToolUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Language\Languages\Marshallese\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

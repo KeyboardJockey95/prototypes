@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JTLanguage Version="1">
+  <DictionaryEntry KeyType="String" Key="hablar" CreationTime="11/21/2021 13:55:05" ModifiedTime="11/21/2021 13:55:27" LanguageID="es">
+    <SourceIDs>16,5</SourceIDs>
+    <Sense Category="Verb" CategoryString="v,ar">
+      <LanguageSynonyms LanguageID="en">
+        <ProbableSynonym>
+          <Meaning>speak</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,ar</CategoryString>
+          <SourceIDs>16</SourceIDs>
+        </ProbableSynonym>
+        <ProbableSynonym>
+          <Meaning>talk</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,ar</CategoryString>
+          <SourceIDs>16</SourceIDs>
+        </ProbableSynonym>
+        <ProbableSynonym>
+          <Meaning>communicate</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,ar</CategoryString>
+          <SourceIDs>16</SourceIDs>
+        </ProbableSynonym>
+        <ProbableSynonym>
+          <Meaning>chat</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,ar</CategoryString>
+          <SourceIDs>16</SourceIDs>
+        </ProbableSynonym>
+        <ProbableSynonym>
+          <Meaning>gab</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,ar</CategoryString>
+          <SourceIDs>16</SourceIDs>
+        </ProbableSynonym>
+      </LanguageSynonyms>
+    </Sense>
+    <Sense Category="Verb" CategoryString="v,i,ar">
+      <LanguageSynonyms LanguageID="en">
+        <ProbableSynonym>
+          <Meaning>to talk</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,i,ar</CategoryString>
+          <SourceIDs>5</SourceIDs>
+        </ProbableSynonym>
+        <ProbableSynonym>
+          <Meaning>to speak</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,i,ar</CategoryString>
+          <SourceIDs>5</SourceIDs>
+        </ProbableSynonym>
+        <ProbableSynonym>
+          <Meaning>to communicate using words</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,i,ar</CategoryString>
+          <SourceIDs>5</SourceIDs>
+        </ProbableSynonym>
+      </LanguageSynonyms>
+    </Sense>
+    <Sense Category="Verb" CategoryString="v,t,ar">
+      <LanguageSynonyms LanguageID="en">
+        <ProbableSynonym>
+          <Meaning>to speak (a language)</Meaning>
+          <Category>Verb</Category>
+          <CategoryString>v,t,ar</CategoryString>
+          <SourceIDs>5</SourceIDs>
+        </ProbableSynonym>
+      </LanguageSynonyms>
+    </Sense>
+  </DictionaryEntry>
+</JTLanguage>
