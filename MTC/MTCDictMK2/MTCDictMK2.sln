@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTCDictMK2", "MTCDictMK2.csproj", "{B56FA752-C515-4164-A6AF-99CD0D7B1F7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B56FA752-C515-4164-A6AF-99CD0D7B1F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56FA752-C515-4164-A6AF-99CD0D7B1F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56FA752-C515-4164-A6AF-99CD0D7B1F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56FA752-C515-4164-A6AF-99CD0D7B1F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBE4E5EC-12DE-47DE-8E13-E3A924565468}
+	EndGlobalSection
+EndGlobal

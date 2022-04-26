@@ -1,6 +1,0 @@
-C:\MTC\passages-api\LexDb\Lex.Db.Net45\bin\Debug\Lex.Db.dll
-C:\MTC\passages-api\LexDb\Lex.Db.Net45\bin\Debug\Lex.Db.pdb
-C:\MTC\passages-api\LexDb\Lex.Db.Net45\obj\Debug\Lex.Db.Net45.csproj.AssemblyReference.cache
-C:\MTC\passages-api\LexDb\Lex.Db.Net45\obj\Debug\Lex.Db.Net45.csproj.CoreCompileInputs.cache
-C:\MTC\passages-api\LexDb\Lex.Db.Net45\obj\Debug\Lex.Db.dll
-C:\MTC\passages-api\LexDb\Lex.Db.Net45\obj\Debug\Lex.Db.pdb

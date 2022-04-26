@@ -18,4 +18,32 @@
 ///     Hello, world!
 ///     
 /// </summary>
-Console.WriteLine("Hello, World!");
+///
+
+using JTLanguageModelsPortable.Dictionary;
+using System.Xml;
+
+namespace MTCDict
+{
+    internal class MTCDict
+    {
+        static void Main(string[] args)
+        {
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+
+            XmlWriter writer = XmlWriter.Create("MTCDictionary.xml", settings);
+            writer.WriteStartElement("JTLanguage");
+            writer.WriteAttributeString("Version", "1");
+
+            {
+                DictionaryEntry entry = new DictionaryEntry();
+                entry.Xml.WriteTo(writer);
+            }
+
+            writer.WriteEndElement();
+
+            writer.Close();
+        }
+    }
+}
