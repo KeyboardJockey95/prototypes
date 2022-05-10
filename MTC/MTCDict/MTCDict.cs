@@ -11,12 +11,6 @@
 ///     Instantiate a DictionaryEntry object
 ///     Export the object as XML
 /// 
-/// Sample Input
-/// 
-/// Sample Output
-/// 
-///     Hello, world!
-///     
 /// </summary>
 ///
 
