@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JTLanguageModelsPortable, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\MTC\passages-api\bin\JTLanguageModelsPortable.dll</HintPath>
+    </Reference>
+    <Reference Include="Lex.Db, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\MTC\passages-api\bin\Lex.Db.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,16 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MTCLib\JTLanguageModelsPortable\JTLanguageModelsPortable.csproj">
-      <Project>{496a5b66-4ac0-4a61-ac4a-22a2c002a350}</Project>
-      <Name>JTLanguageModelsPortable</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MTCLib\LexDb\Lex.Db.Portable\Lex.Db.Portable.csproj">
-      <Project>{f362f6b0-90b4-449b-96f8-8c5d7e950c2c}</Project>
-      <Name>Lex.Db.Portable</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
