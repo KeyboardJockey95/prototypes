@@ -139,8 +139,48 @@ namespace MTCDict
                                                         // capture the delimited content
                                                         string delimitedContent = tElementContent.Substring(0, endDelimIndex);
 
-                                                        // advance the string to the last delimiter.  The enclosing while loop will advance past the last delim
+                                                        // advance the string to the end delimiter.  The enclosing while loop will advance past the end delim
                                                         tElementContent = tElementContent.Substring(delimitedContent.Length);
+
+                                                        // identify and save whatever this thing is
+                                                        LexicalCategory lexicalCategory = new LexicalCategory();
+
+                                                        switch (beginDelim)
+                                                        {
+                                                            case '{':   // part of speech
+                                                                    switch (delimitedContent)
+                                                                    {
+                                                                    case "n":
+                                                                        lexicalCategory = LexicalCategory.Noun;
+                                                                        break;
+
+                                                                    case "art":
+                                                                        break;
+
+                                                                    case "prop":
+                                                                        break;
+
+                                                                    case "interj":
+                                                                        break;
+
+                                                                    case "adj":
+                                                                        break;
+
+                                                                    default:
+                                                                        break;
+
+                                                                    }
+                                                                break;
+
+                                                            case '/':   // pronunciation
+                                                                break;
+
+                                                            case '(':   // definition
+                                                                break;
+
+                                                            default:
+                                                                break;
+                                                        }
                                                     }
                                                     break;
                                                 }
