@@ -17,6 +17,7 @@
 using JTLanguageModelsPortable.Dictionary;
 using JTLanguageModelsPortable.Object;
 using System.Xml;
+using System.Collections.Generic;
 
 namespace MTCDict
 {
@@ -69,12 +70,89 @@ namespace MTCDict
                             {
                                 switch (xmlReader.Name)
                                 {
+                                    // the <c> element contains the host language version of the word
                                     case "c":
                                         entry.Key = xmlReader.ReadString();
                                         break;
 
+                                    // the <d> element contains the target language version(s) of the word (comma-separated list), and an optional {gender}
                                     case "d":
-                                        synonyms.AddProbableSynonym(new ProbableMeaning { Meaning = xmlReader.ReadString() });
+                                        string dElementContent = xmlReader.ReadString();
+                                        string[] tlGenderedWords = dElementContent.Split(new char[] { ',' }, System.StringSplitOptions.RemoveEmptyEntries);
+                                        foreach (string tlGenderedWord in tlGenderedWords)
+                                        {
+                                            string[] tlGenderedWordComponents = tlGenderedWord.Trim().Split(' ');
+                                            ProbableMeaning probableMeaning = new ProbableMeaning() { Meaning = tlGenderedWordComponents[0] };
+
+                                            // Do we have a gender
+                                            if (tlGenderedWordComponents.Length > 1)
+                                            {
+                                                List<LexicalAttribute> lexicalAttributes = new List<LexicalAttribute>();
+
+                                                switch (tlGenderedWordComponents[1])
+                                                {
+                                                    case "{f}":
+                                                        lexicalAttributes.Add(LexicalAttribute.Feminine);
+                                                        break;
+
+                                                    case "{m}":
+                                                        lexicalAttributes.Add(LexicalAttribute.Masculine);
+                                                        break;
+
+                                                    default:
+                                                        break;
+                                                }
+
+                                                if (lexicalAttributes.Count > 0)
+                                                {
+                                                    probableMeaning.Attributes = lexicalAttributes;
+                                                }
+                                            }
+
+                                            synonyms.AddProbableSynonym(probableMeaning);
+                                        }
+
+                                        break;
+
+                                    // the <t> element is a composite element, <t>{partOfSpeech} /optionalPronunciation/ (definition) SEE:</t>
+                                    // definition may have a nested (parenthetical statement)
+                                    case "t":
+                                        string tElementContent = xmlReader.ReadString();
+                                        string beginDelims = "{/(";
+                                        string endDelims = "}/)";
+                                        
+                                        while (tElementContent.Length > 0)
+                                        {
+                                            foreach (char beginDelim in beginDelims)
+                                            {
+                                                if (tElementContent[0] == beginDelim)
+                                                {
+                                                    // Move past the begin delimiter.  This helps us out especially in the case where both begin and end delimiters are the same
+                                                    tElementContent = tElementContent.Substring(1);
+
+                                                    // verify the existence of an end delimiter
+                                                    char endDelim = endDelims[beginDelims.IndexOf(beginDelim)];
+
+                                                    int endDelimIndex = tElementContent.IndexOf(endDelim);
+                                                    if (endDelimIndex != -1)
+                                                    {
+                                                        // capture the delimited content
+                                                        string delimitedContent = tElementContent.Substring(0, endDelimIndex);
+
+                                                        // advance the string to the last delimiter.  The enclosing while loop will advance past the last delim
+                                                        tElementContent = tElementContent.Substring(delimitedContent.Length);
+                                                    }
+                                                    break;
+                                                }
+                                            }
+
+                                            if (tElementContent.Length > 0)
+                                            {
+                                                // Advance one char
+                                                tElementContent = tElementContent.Substring(1);
+                                            }
+                                        }
+
                                         break;
 
                                     default:
