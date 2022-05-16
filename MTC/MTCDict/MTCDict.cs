@@ -118,8 +118,8 @@ namespace MTCDict
                                     // definition may have a nested (parenthetical statement)
                                     case "t":
                                         string tElementContent = xmlReader.ReadString();
-                                        string beginDelims = "{/(";
-                                        string endDelims = "}/)";
+                                        string beginDelims = "{/([";
+                                        string endDelims = "}/)]";
                                         
                                         while (tElementContent.Length > 0)
                                         {
@@ -128,59 +128,88 @@ namespace MTCDict
                                                 if (tElementContent[0] == beginDelim)
                                                 {
                                                     // Move past the begin delimiter.  This helps us out especially in the case where both begin and end delimiters are the same
-                                                    tElementContent = tElementContent.Substring(1);
+                                                    tElementContent = tElementContent.Remove(0, 1);
 
-                                                    // verify the existence of an end delimiter
+                                                    // select the matching end delimiter
                                                     char endDelim = endDelims[beginDelims.IndexOf(beginDelim)];
 
-                                                    int endDelimIndex = tElementContent.IndexOf(endDelim);
-                                                    if (endDelimIndex != -1)
+                                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                    // need to handle the case of nested delimiters and find the index of the one that matches the begin delimiter
+                                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                    int nestingDepth = 1;
+                                                    int substringLength = 0;
+                                                    string delimitedContent = "";
+                                                    foreach (char curChar in tElementContent)
                                                     {
-                                                        // capture the delimited content
-                                                        string delimitedContent = tElementContent.Substring(0, endDelimIndex);
-
-                                                        // advance the string to the end delimiter.  The enclosing while loop will advance past the end delim
-                                                        tElementContent = tElementContent.Substring(delimitedContent.Length);
-
-                                                        // identify and save whatever this thing is
-                                                        LexicalCategory lexicalCategory = new LexicalCategory();
-
-                                                        switch (beginDelim)
+                                                        // the order of checking delims here matters (check for end delim first)
+                                                        // in the case where the begin and end delims are the same.
+                                                        if (curChar == endDelim)
                                                         {
-                                                            case '{':   // part of speech
-                                                                    switch (delimitedContent)
-                                                                    {
-                                                                    case "n":
-                                                                        lexicalCategory = LexicalCategory.Noun;
-                                                                        break;
-
-                                                                    case "art":
-                                                                        break;
-
-                                                                    case "prop":
-                                                                        break;
-
-                                                                    case "interj":
-                                                                        break;
-
-                                                                    case "adj":
-                                                                        break;
-
-                                                                    default:
-                                                                        break;
-
-                                                                    }
-                                                                break;
-
-                                                            case '/':   // pronunciation
-                                                                break;
-
-                                                            case '(':   // definition
-                                                                break;
-
-                                                            default:
-                                                                break;
+                                                            nestingDepth--;
                                                         }
+                                                        else if (curChar == beginDelim)
+                                                        {
+                                                            nestingDepth++;
+                                                        }
+
+                                                        if (nestingDepth == 0)
+                                                        {
+                                                            // capture the delimited content
+                                                            delimitedContent = tElementContent.Substring(0, substringLength);
+                                                            tElementContent = tElementContent.Remove(0, substringLength);
+                                                            break;
+                                                        }
+                                                        else
+                                                        {
+                                                            substringLength++;
+                                                        }
+                                                    }
+
+                                                    // identify and save whatever this thing is
+                                                    switch (beginDelim)
+                                                    {
+                                                        case '{':   // part of speech
+                                                            // debugging code - xmlWriter.WriteElementString("p", delimitedContent);
+                                                            switch (delimitedContent)
+                                                            {
+                                                                case "abbr":            sense.Category = LexicalCategory.Abbreviation;         break;
+                                                                case "acronym":         sense.Category = LexicalCategory.Acronym;              break;
+                                                                case "adj":             sense.Category = LexicalCategory.Adjective;            break;
+                                                                case "adv":             sense.Category = LexicalCategory.Adverb;               break;
+                                                                case "art":             sense.Category = LexicalCategory.Article;              break;
+                                                                case "cardinal num":    sense.Category = LexicalCategory.Number;               break;
+                                                                case "conj":            sense.Category = LexicalCategory.Conjunction;          break;
+                                                                case "contraction":     sense.Category = LexicalCategory.Contraction;          break;
+                                                                case "determiner":      sense.Category = LexicalCategory.Determiner;           break;
+                                                                case "initialism":      sense.Category = LexicalCategory.NotFound;             break;
+                                                                case "interj":          sense.Category = LexicalCategory.Interjection;         break;
+                                                                case "n":               sense.Category = LexicalCategory.Noun;                 break;
+                                                                case "num":             sense.Category = LexicalCategory.Number;               break;
+                                                                case "particle":        sense.Category = LexicalCategory.Particle;             break;
+                                                                case "phrase":          sense.Category = LexicalCategory.Phrase;               break;
+                                                                case "prefix":          sense.Category = LexicalCategory.Prefix;               break;
+                                                                case "prep":            sense.Category = LexicalCategory.Preposition;          break;
+                                                                case "prep phrase":     sense.Category = LexicalCategory.PrepositionalPhrase;  break;
+                                                                case "pron":            sense.Category = LexicalCategory.Pronoun;              break;
+                                                                case "prop":            sense.Category = LexicalCategory.ProperNoun;           break;
+                                                                case "proverb":         sense.Category = LexicalCategory.Proverb;              break;
+                                                                case "suffix":          sense.Category = LexicalCategory.Suffix;               break;
+                                                                case "symbol":          sense.Category = LexicalCategory.Symbol;               break;
+                                                                case "v":               sense.Category = LexicalCategory.Verb;                 break;
+
+                                                                default:
+                                                                    break;
+                                                            }
+                                                            break;
+
+                                                        case '/':   // pronunciation
+                                                            break;
+
+                                                        case '(':   // definition
+                                                            break;
+
+                                                        default:
+                                                            break;
                                                     }
                                                     break;
                                                 }
@@ -189,7 +218,7 @@ namespace MTCDict
                                             if (tElementContent.Length > 0)
                                             {
                                                 // Advance one char
-                                                tElementContent = tElementContent.Substring(1);
+                                                tElementContent = tElementContent.Remove(0, 1);
                                             }
                                         }
 

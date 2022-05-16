@@ -53,12 +53,11 @@
   <ItemGroup>
     <Compile Include="MTCDict.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TargetHostTarget\Word.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TargetHostTarget\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

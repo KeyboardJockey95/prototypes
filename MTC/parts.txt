@@ -1,0 +1,24 @@
+abbr
+acronym
+adj
+adv
+art
+cardinal num
+conj
+contraction
+determiner
+initialism
+interj
+n
+num
+particle
+phrase
+prefix
+prep
+prep phrase
+pron
+prop
+proverb
+suffix
+symbol
+v
