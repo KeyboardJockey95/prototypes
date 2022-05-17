@@ -1,5 +1,0 @@
-C:\MTC\MTCDict\obj\Debug\net6.0\MTCDict.csproj.AssemblyReference.cache
-C:\MTC\MTCDict\obj\Debug\net6.0\MTCDict.GeneratedMSBuildEditorConfig.editorconfig
-C:\MTC\MTCDict\obj\Debug\net6.0\MTCDict.AssemblyInfoInputs.cache
-C:\MTC\MTCDict\obj\Debug\net6.0\MTCDict.AssemblyInfo.cs
-C:\MTC\MTCDict\obj\Debug\net6.0\MTCDict.csproj.CoreCompileInputs.cache
