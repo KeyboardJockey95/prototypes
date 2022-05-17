@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JTLanguage Version="1">
+  <DictionaryEntry KeyType="String" Key="Côte d'Ivoire" LanguageID="en">
+    <Sense Category="ProperNoun">
+      <LanguageSynonyms LanguageID="es">
+        <ProbableSynonym>
+          <Meaning>Costa</Meaning>
+          <Category>Unknown</Category>
+        </ProbableSynonym>
+      </LanguageSynonyms>
+    </Sense>
+  </DictionaryEntry>
+  <DictionaryEntry KeyType="String" Key="C sharp" LanguageID="en">
+    <Sense Category="ProperNoun">
+      <LanguageSynonyms LanguageID="es" />
+    </Sense>
+  </DictionaryEntry>
+</JTLanguage>
